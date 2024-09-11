@@ -4,8 +4,8 @@ project:
 
 book:
   title: "COMP/STAT112 Notebook"
-  author: "Your Name Here"
-  date: "Date Here"
+  author: "Riley Cogan"
+  date: "09/03/2024"
   reader-mode: true
   
   chapters:
@@ -13,7 +13,7 @@ book:
 
     - part: activities/README.qmd
       chapters: 
-      - activities/activity-01.qmd
+      - activity-01.qmd
       - activities/activity-02.qmd
       - activities/activity-03.qmd
     
@@ -21,6 +21,8 @@ book:
       chapters: 
       - notes/note-01.qmd
       - notes/note-02.qmd
+      
+    
 
 format:
   html:
