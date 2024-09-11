@@ -20,6 +20,17 @@
     ]
   },
   {
+    "objectID": "activities/activity-03.html",
+    "href": "activities/activity-03.html",
+    "title": "2  Activity 03",
+    "section": "",
+    "text": "hikes &lt;- read.csv(“https://mac-stat.github.io/data/high_peaks.csv”) head(hikes)\nlibrary(tidyverse) ggplot(hikes, aes(x = rating))\n\n3 COMMENT on the change in the code and the corresponding change in the plot\nggplot(hikes, aes(x = rating)) + geom_bar()\n\n\n4 COMMENT on the change in the code and the corresponding change in the plot\nggplot(hikes, aes(x = rating)) + geom_bar() + labs(x = “Rating”, y = “Number of hikes”)\n\n\n5 COMMENT on the change in the code and the corresponding change in the plot\nggplot(hikes, aes(x = rating)) + geom_bar(fill = “blue”) + labs(x = “Rating”, y = “Number of hikes”)\n\n\n6 COMMENT on the change in the code and the corresponding change in the plot\nggplot(hikes, aes(x = rating)) + geom_bar(color = “orange”, fill = “blue”) + labs(x = “Rating”, y = “Number of hikes”)\n\n\n7 COMMENT on the change in the code and the corresponding change in the plot\nggplot(hikes, aes(x = rating)) + geom_bar(color = “orange”, fill = “blue”) + labs(x = “Rating”, y = “Number of hikes”) + theme_minimal()",
+    "crumbs": [
+      "Activities",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 03</span>"
+    ]
+  },
+  {
     "objectID": "notes/README.html",
     "href": "notes/README.html",
     "title": "Notes",
