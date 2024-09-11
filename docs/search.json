@@ -24,7 +24,18 @@
     "href": "activities/activity-03.html",
     "title": "2  Activity 03",
     "section": "",
-    "text": "hikes &lt;- read.csv(“https://mac-stat.github.io/data/high_peaks.csv”) head(hikes)\nlibrary(tidyverse) ggplot(hikes, aes(x = rating))\n\n3 COMMENT on the change in the code and the corresponding change in the plot\nggplot(hikes, aes(x = rating)) + geom_bar()\n\n\n4 COMMENT on the change in the code and the corresponding change in the plot\nggplot(hikes, aes(x = rating)) + geom_bar() + labs(x = “Rating”, y = “Number of hikes”)\n\n\n5 COMMENT on the change in the code and the corresponding change in the plot\nggplot(hikes, aes(x = rating)) + geom_bar(fill = “blue”) + labs(x = “Rating”, y = “Number of hikes”)\n\n\n6 COMMENT on the change in the code and the corresponding change in the plot\nggplot(hikes, aes(x = rating)) + geom_bar(color = “orange”, fill = “blue”) + labs(x = “Rating”, y = “Number of hikes”)\n\n\n7 COMMENT on the change in the code and the corresponding change in the plot\nggplot(hikes, aes(x = rating)) + geom_bar(color = “orange”, fill = “blue”) + labs(x = “Rating”, y = “Number of hikes”) + theme_minimal()",
+    "text": "3 COMMENT on the change in the code and the corresponding change in the plot\nggplot(hikes, aes(x = rating)) + geom_bar()",
+    "crumbs": [
+      "Activities",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 03</span>"
+    ]
+  },
+  {
+    "objectID": "activities/activity-03.html#reflections-the-plus-symbol-allows-us-to-add-altercations-to-the-graph-furthering-the-stylistic-and-technical-capabilities-of-the-plot-the-geom-was-added-becuase-of-the-geogra",
+    "href": "activities/activity-03.html#reflections-the-plus-symbol-allows-us-to-add-altercations-to-the-graph-furthering-the-stylistic-and-technical-capabilities-of-the-plot-the-geom-was-added-becuase-of-the-geogra",
+    "title": "2  Activity 03",
+    "section": "7.1 Reflections, the plus symbol allows us to add altercations to the graph, furthering the stylistic and technical capabilities of the plot… The geom was added becuase of the geogra",
+    "text": "7.1 Reflections, the plus symbol allows us to add altercations to the graph, furthering the stylistic and technical capabilities of the plot… The geom was added becuase of the geogra",
     "crumbs": [
       "Activities",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 03</span>"
