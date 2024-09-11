@@ -5,3 +5,5 @@ title: "Activity 03"
 hikes <- read.csv("https://mac-stat.github.io/data/high_peaks.csv")
 head(hikes)
 
+library(tidyverse)
+ggplot(hikes, aes(x = rating))
