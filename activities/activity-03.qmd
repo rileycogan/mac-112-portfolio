@@ -35,7 +35,43 @@ ggplot(hikes, aes(x = rating)) +
   labs(x = "Rating", y = "Number of hikes") +
   theme_minimal()  
 
-## Reflections, the plus symbol allows us to add altercations to the graph, furthering the stylistic and technical capabilities of the plot... The geom was added becuase of the geogra
+## Reflections, the plus symbol allows us to add altercations to the graph, furthering the stylistic and technical capabilities of the plot... 
 
-hello
+# The plus allows us to add layers to a plot. We used the geom function to create our plot, as that is the function that plots different types of graphs in ggplot. The labs() function labels different components of your graphs. The fill is the color on the inside, or the most visible color, and color represents the outline of the plot. 
+
+
+# Excersize 6
+
+ggplot(hikes, aes(x = elevation)) + 
+geom_bar(color = "orange", fill = "orange") + 
+labs(x = "elevation", y = "Number of hikes") + 
+theme_minimal()
+
+# This bar graph does a horrible job of displaying the range of elevation, as well not highlighting outliers in elevation within the model, it is hard to read and understand. 
+
+# Excerisize 8
+
+ggplot(hikes, aes(x = elevation))
+
+# COMMENT on the change in the code and the corresponding change in the plot
+ggplot(hikes, aes(x = elevation)) +
+  geom_histogram()
+  
+# COMMENT on the change in the code and the corresponding change in the plot
+ggplot(hikes, aes(x = elevation)) +
+  geom_histogram(color = "white") 
+  
+# COMMENT on the change in the code and the corresponding change in the plot
+ggplot(hikes, aes(x = elevation)) +
+  geom_histogram(color = "white", fill = "blue") 
+  
+# COMMENT on the change in the code and the corresponding change in the plot
+ggplot(hikes, aes(x = elevation)) +
+  geom_histogram(color = "white") +
+  labs(x = "Elevation (feet)", y = "Number of hikes")
+  
+# COMMENT on the change in the code and the corresponding change in the plot
+ggplot(hikes, aes(x = elevation)) +
+  geom_histogram(color = "white", binwidth = 1000) +
+  labs(x = "Elevation (feet)", y = "Number of hikes")
   
