@@ -205,7 +205,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#load-data" id="toc-load-data" class="nav-link active" data-scroll-target="#load-data"><span class="header-section-number">2</span> Load data</a></li>
+  <li><a href="#check-it-out" id="toc-check-it-out" class="nav-link" data-scroll-target="#check-it-out"><span class="header-section-number">3</span> Check it out</a></li>
+  <li><a href="#set-up-the-plotting-frame" id="toc-set-up-the-plotting-frame" class="nav-link" data-scroll-target="#set-up-the-plotting-frame"><span class="header-section-number">4</span> Set up the plotting frame</a></li>
+  <li><a href="#how-does-this-differ-than-the-frame-for-our-histogram-of-repub_pct_20-alone" id="toc-how-does-this-differ-than-the-frame-for-our-histogram-of-repub_pct_20-alone" class="nav-link" data-scroll-target="#how-does-this-differ-than-the-frame-for-our-histogram-of-repub_pct_20-alone"><span class="header-section-number">5</span> How does this differ than the frame for our histogram of repub_pct_20 alone?</a></li>
+  <li><a href="#add-a-layer-of-points-for-each-county" id="toc-add-a-layer-of-points-for-each-county" class="nav-link" data-scroll-target="#add-a-layer-of-points-for-each-county"><span class="header-section-number">6</span> Add a layer of points for each county</a></li>
+  <li><a href="#take-note-of-the-geom" id="toc-take-note-of-the-geom" class="nav-link" data-scroll-target="#take-note-of-the-geom"><span class="header-section-number">7</span> Take note of the geom!</a></li>
+  <li><a href="#change-the-shape-of-the-points" id="toc-change-the-shape-of-the-points" class="nav-link" data-scroll-target="#change-the-shape-of-the-points"><span class="header-section-number">8</span> Change the shape of the points</a></li>
+  <li><a href="#what-happens-if-you-change-the-shape-to-another-number" id="toc-what-happens-if-you-change-the-shape-to-another-number" class="nav-link" data-scroll-target="#what-happens-if-you-change-the-shape-to-another-number"><span class="header-section-number">9</span> What happens if you change the shape to another number?</a></li>
+  <li><a href="#you-try-modify-the-code-to-make-the-points-orange" id="toc-you-try-modify-the-code-to-make-the-points-orange" class="nav-link" data-scroll-target="#you-try-modify-the-code-to-make-the-points-orange"><span class="header-section-number">10</span> YOU TRY: Modify the code to make the points “orange”</a></li>
+  <li><a href="#note-try-to-anticipate-if-color-or-fill-will-be-useful-here.-then-try-both." id="toc-note-try-to-anticipate-if-color-or-fill-will-be-useful-here.-then-try-both." class="nav-link" data-scroll-target="#note-try-to-anticipate-if-color-or-fill-will-be-useful-here.-then-try-both."><span class="header-section-number">11</span> NOTE: Try to anticipate if “color” or “fill” will be useful here. Then try both.</a></li>
+  <li><a href="#add-a-layer-that-represents-each-county-by-the-state-its-in" id="toc-add-a-layer-that-represents-each-county-by-the-state-its-in" class="nav-link" data-scroll-target="#add-a-layer-that-represents-each-county-by-the-state-its-in"><span class="header-section-number">12</span> Add a layer that represents each county by the state it’s in</a></li>
+  <li><a href="#take-note-of-the-geom-and-the-info-it-needs-to-run" id="toc-take-note-of-the-geom-and-the-info-it-needs-to-run" class="nav-link" data-scroll-target="#take-note-of-the-geom-and-the-info-it-needs-to-run"><span class="header-section-number">13</span> Take note of the geom and the info it needs to run!</a></li>
+  <li><a href="#the-biggest-differences-in-republican-support-between-16-and-20-was-an-increase-in-support-amongst-the-percentage-of-people-that-voted-republican-it-seems-that-the-dots-tend-to-have-shifted-upwards-in-20.-there-seems-to-be-a-strong-positive-relationship-between-support-in-16-and-20.-left-leaning-states-seem-to-be-clustered-around-the-bottom-of-the-line-in-areas-with-the-lowest-amount-of-republican-support-whereas-the-areas-that-saw-the-biggest-increase-where-in-right-leaning-states." id="toc-the-biggest-differences-in-republican-support-between-16-and-20-was-an-increase-in-support-amongst-the-percentage-of-people-that-voted-republican-it-seems-that-the-dots-tend-to-have-shifted-upwards-in-20.-there-seems-to-be-a-strong-positive-relationship-between-support-in-16-and-20.-left-leaning-states-seem-to-be-clustered-around-the-bottom-of-the-line-in-areas-with-the-lowest-amount-of-republican-support-whereas-the-areas-that-saw-the-biggest-increase-where-in-right-leaning-states." class="nav-link" data-scroll-target="#the-biggest-differences-in-republican-support-between-16-and-20-was-an-increase-in-support-amongst-the-percentage-of-people-that-voted-republican-it-seems-that-the-dots-tend-to-have-shifted-upwards-in-20.-there-seems-to-be-a-strong-positive-relationship-between-support-in-16-and-20.-left-leaning-states-seem-to-be-clustered-around-the-bottom-of-the-line-in-areas-with-the-lowest-amount-of-republican-support-whereas-the-areas-that-saw-the-biggest-increase-where-in-right-leaning-states."><span class="header-section-number">14</span> The biggest differences in republican support between ’16 and ’20 was an increase in support amongst the percentage of people that voted republican, it seems that the dots tend to have shifted upwards in ’20. There seems to be a strong, positive relationship between support in ’16 and ’20. Left leaning states seem to be clustered around the bottom of the line, in areas with the lowest amount of Republican support, whereas the areas that saw the biggest increase where in right leaning states.</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -229,10 +247,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="load-data" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Load data</h1>
+<p>elections &lt;- read.csv(“https://mac-stat.github.io/data/election_2020_county.csv”)</p>
+</section>
+<section id="check-it-out" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Check it out</h1>
+<p>head(elections)</p>
+</section>
+<section id="set-up-the-plotting-frame" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Set up the plotting frame</h1>
+</section>
+<section id="how-does-this-differ-than-the-frame-for-our-histogram-of-repub_pct_20-alone" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> How does this differ than the frame for our histogram of repub_pct_20 alone?</h1>
+<p>ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16))</p>
+</section>
+<section id="add-a-layer-of-points-for-each-county" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Add a layer of points for each county</h1>
+</section>
+<section id="take-note-of-the-geom" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Take note of the geom!</h1>
+<p>ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point()</p>
+</section>
+<section id="change-the-shape-of-the-points" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Change the shape of the points</h1>
+</section>
+<section id="what-happens-if-you-change-the-shape-to-another-number" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> What happens if you change the shape to another number?</h1>
+<p>ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point(shape = 8)</p>
+</section>
+<section id="you-try-modify-the-code-to-make-the-points-orange" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> YOU TRY: Modify the code to make the points “orange”</h1>
+</section>
+<section id="note-try-to-anticipate-if-color-or-fill-will-be-useful-here.-then-try-both." class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> NOTE: Try to anticipate if “color” or “fill” will be useful here. Then try both.</h1>
+<p>ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16, color = “orange”)) + geom_point()</p>
+</section>
+<section id="add-a-layer-that-represents-each-county-by-the-state-its-in" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Add a layer that represents each county by the state it’s in</h1>
+</section>
+<section id="take-note-of-the-geom-and-the-info-it-needs-to-run" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Take note of the geom and the info it needs to run!</h1>
+<p>ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_text(aes(label = state_abbr))</p>
+</section>
+<section id="the-biggest-differences-in-republican-support-between-16-and-20-was-an-increase-in-support-amongst-the-percentage-of-people-that-voted-republican-it-seems-that-the-dots-tend-to-have-shifted-upwards-in-20.-there-seems-to-be-a-strong-positive-relationship-between-support-in-16-and-20.-left-leaning-states-seem-to-be-clustered-around-the-bottom-of-the-line-in-areas-with-the-lowest-amount-of-republican-support-whereas-the-areas-that-saw-the-biggest-increase-where-in-right-leaning-states." class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> The biggest differences in republican support between ’16 and ’20 was an increase in support amongst the percentage of people that voted republican, it seems that the dots tend to have shifted upwards in ’20. There seems to be a strong, positive relationship between support in ’16 and ’20. Left leaning states seem to be clustered around the bottom of the line, in areas with the lowest amount of Republican support, whereas the areas that saw the biggest increase where in right leaning states.</h1>
+<p>ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point() + geom_smooth()</p>
 
 
 <!-- -->
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -709,7 +774,44 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "Activity 02"</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="an">Author:</span><span class="co"> "riley Cogan"</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="an">Date:</span><span class="co"> "9/13/2024"</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co">---</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu"># Load data</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>elections &lt;- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="fu"># Check it out</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>head(elections)</span>
+<span id="cb1-11"><a href="#cb1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="fu"># Set up the plotting frame</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="fu"># How does this differ than the frame for our histogram of repub_pct_20 alone?</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16))</span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="fu"># Add a layer of points for each county</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="fu"># Take note of the geom!</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +</span>
+<span id="cb1-19"><a href="#cb1-19"></a>  geom_point()</span>
+<span id="cb1-20"><a href="#cb1-20"></a>  </span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="fu"># Change the shape of the points</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="fu"># What happens if you change the shape to another number?</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a>ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +</span>
+<span id="cb1-24"><a href="#cb1-24"></a>  geom_point(shape = 8)</span>
+<span id="cb1-25"><a href="#cb1-25"></a>  </span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="fu"># YOU TRY: Modify the code to make the points "orange"</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="fu"># NOTE: Try to anticipate if "color" or "fill" will be useful here. Then try both.</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a>ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16, color = "orange")) +</span>
+<span id="cb1-29"><a href="#cb1-29"></a>  geom_point()</span>
+<span id="cb1-30"><a href="#cb1-30"></a>  </span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="fu"># Add a layer that represents each county by the state it's in</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="fu"># Take note of the geom and the info it needs to run!</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a>ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +</span>
+<span id="cb1-34"><a href="#cb1-34"></a>  geom_text(aes(label = state_abbr))</span>
+<span id="cb1-35"><a href="#cb1-35"></a>  </span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="fu"># The biggest differences in republican support between '16 and '20 was an increase in support amongst the percentage of people that voted republican, it seems that the dots tend to have shifted upwards in '20. There seems to be a strong, positive relationship between support in '16 and '20. Left leaning states seem to be clustered around the bottom of the line, in areas with the lowest amount of Republican support, whereas the areas that saw the biggest increase where in right leaning states. </span></span>
+<span id="cb1-37"><a href="#cb1-37"></a></span>
+<span id="cb1-38"><a href="#cb1-38"></a>ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +</span>
+<span id="cb1-39"><a href="#cb1-39"></a>  geom_point() +</span>
+<span id="cb1-40"><a href="#cb1-40"></a>  geom_smooth()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

@@ -1,4 +1,40 @@
 ---
 title: "Activity 02"
+Author: "riley Cogan"
+Date: "9/13/2024"
 ---
+# Load data
+elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")
 
+# Check it out
+head(elections)
+
+# Set up the plotting frame
+# How does this differ than the frame for our histogram of repub_pct_20 alone?
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16))
+
+# Add a layer of points for each county
+# Take note of the geom!
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_point()
+  
+# Change the shape of the points
+# What happens if you change the shape to another number?
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_point(shape = 8)
+  
+# YOU TRY: Modify the code to make the points "orange"
+# NOTE: Try to anticipate if "color" or "fill" will be useful here. Then try both.
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16, color = "orange")) +
+  geom_point()
+  
+# Add a layer that represents each county by the state it's in
+# Take note of the geom and the info it needs to run!
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_text(aes(label = state_abbr))
+  
+# The biggest differences in republican support between '16 and '20 was an increase in support amongst the percentage of people that voted republican, it seems that the dots tend to have shifted upwards in '20. There seems to be a strong, positive relationship between support in '16 and '20. Left leaning states seem to be clustered around the bottom of the line, in areas with the lowest amount of Republican support, whereas the areas that saw the biggest increase where in right leaning states. 
+
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_point() +
+  geom_smooth()
