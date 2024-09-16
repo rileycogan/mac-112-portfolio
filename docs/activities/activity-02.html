@@ -226,7 +226,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#excersize-5" id="toc-excersize-5" class="nav-link" data-scroll-target="#excersize-5"><span class="header-section-number">16</span> Excersize 5</a></li>
   <li><a href="#scatterplot-of-repub_pct_20-vs-median_rent" id="toc-scatterplot-of-repub_pct_20-vs-median_rent" class="nav-link" data-scroll-target="#scatterplot-of-repub_pct_20-vs-median_rent"><span class="header-section-number">17</span> Scatterplot of repub_pct_20 vs median_rent</a></li>
   <li><a href="#scatterplot-of-repub_pct_20-vs-median_age" id="toc-scatterplot-of-repub_pct_20-vs-median_age" class="nav-link" data-scroll-target="#scatterplot-of-repub_pct_20-vs-median_age"><span class="header-section-number">18</span> Scatterplot of repub_pct_20 vs median_age</a></li>
-  <li><a href="#excersize-6" id="toc-excersize-6" class="nav-link" data-scroll-target="#excersize-6"><span class="header-section-number">19</span> Excersize 6</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6"><span class="header-section-number">19</span> Exercise 6</a></li>
+  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7"><span class="header-section-number">20</span> Exercise 7</a></li>
+  <li><a href="#side-by-side-violin-plots" id="toc-side-by-side-violin-plots" class="nav-link" data-scroll-target="#side-by-side-violin-plots"><span class="header-section-number">21</span> Side-by-side violin plots</a></li>
+  <li><a href="#side-by-side-boxplots-defined-below" id="toc-side-by-side-boxplots-defined-below" class="nav-link" data-scroll-target="#side-by-side-boxplots-defined-below"><span class="header-section-number">22</span> Side-by-side boxplots (defined below)</a></li>
+  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8"><span class="header-section-number">23</span> Exercise 8</a></li>
+  <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9"><span class="header-section-number">24</span> Exercise 9</a></li>
+  <li><a href="#name-two-bad-things-about-this-plot" id="toc-name-two-bad-things-about-this-plot" class="nav-link" data-scroll-target="#name-two-bad-things-about-this-plot"><span class="header-section-number">25</span> Name two “bad” things about this plot</a></li>
+  <li><a href="#what-does-scale_fill_manual-do" id="toc-what-does-scale_fill_manual-do" class="nav-link" data-scroll-target="#what-does-scale_fill_manual-do"><span class="header-section-number">26</span> What does scale_fill_manual do?</a></li>
+  <li><a href="#what-does-alpha-0.5-do" id="toc-what-does-alpha-0.5-do" class="nav-link" data-scroll-target="#what-does-alpha-0.5-do"><span class="header-section-number">27</span> What does alpha = 0.5 do?</a></li>
+  <li><a href="#play-around-with-different-values-of-alpha-between-0-and-1" id="toc-play-around-with-different-values-of-alpha-between-0-and-1" class="nav-link" data-scroll-target="#play-around-with-different-values-of-alpha-between-0-and-1"><span class="header-section-number">28</span> Play around with different values of alpha, between 0 and 1</a></li>
+  <li><a href="#what-does-facet_wrap-do" id="toc-what-does-facet_wrap-do" class="nav-link" data-scroll-target="#what-does-facet_wrap-do"><span class="header-section-number">29</span> What does facet_wrap do?!</a></li>
+  <li><a href="#lets-try-a-similar-grouping-strategy-with-a-histogram-instead-of-density-plot." id="toc-lets-try-a-similar-grouping-strategy-with-a-histogram-instead-of-density-plot." class="nav-link" data-scroll-target="#lets-try-a-similar-grouping-strategy-with-a-histogram-instead-of-density-plot."><span class="header-section-number">30</span> Let’s try a similar grouping strategy with a histogram instead of density plot.</a></li>
+  <li><a href="#why-is-this-terrible" id="toc-why-is-this-terrible" class="nav-link" data-scroll-target="#why-is-this-terrible"><span class="header-section-number">31</span> Why is this terrible?</a></li>
   </ul>
 </nav>
     </div>
@@ -315,8 +327,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="18"><span class="header-section-number">18</span> Scatterplot of repub_pct_20 vs median_age</h1>
 <p>ggplot(elections, aes(y = repub_pct_20, x = median_age)) + geom_point() geom_smooth(method = “lm”)</p>
 </section>
-<section id="excersize-6" class="level1" data-number="19">
-<h1 data-number="19"><span class="header-section-number">19</span> Excersize 6</h1>
+<section id="exercise-6" class="level1" data-number="19">
+<h1 data-number="19"><span class="header-section-number">19</span> Exercise 6</h1>
+<ul>
+<li>scatter plots aren’t good plots when there is both a quantitative and a categorical variable present. This is because the different types of variables don’t align, and on the axis with the categorical variable, you will be unable to see the range of the variable.</li>
+</ul>
+<p>ggplot(elections, aes(y = repub_pct_20, x = historical)) + geom_point()</p>
+</section>
+<section id="exercise-7" class="level1" data-number="20">
+<h1 data-number="20"><span class="header-section-number">20</span> Exercise 7</h1>
+</section>
+<section id="side-by-side-violin-plots" class="level1" data-number="21">
+<h1 data-number="21"><span class="header-section-number">21</span> Side-by-side violin plots</h1>
+<p>ggplot(elections, aes(y = repub_pct_20, x = historical)) + geom_violin()</p>
+</section>
+<section id="side-by-side-boxplots-defined-below" class="level1" data-number="22">
+<h1 data-number="22"><span class="header-section-number">22</span> Side-by-side boxplots (defined below)</h1>
+<p>ggplot(elections, aes(y = repub_pct_20, x = historical)) + geom_boxplot()</p>
+</section>
+<section id="exercise-8" class="level1" data-number="23">
+<h1 data-number="23"><span class="header-section-number">23</span> Exercise 8</h1>
+<p>ggplot(elections, aes(x = repub_pct_20)) + geom_density()</p>
+</section>
+<section id="exercise-9" class="level1" data-number="24">
+<h1 data-number="24"><span class="header-section-number">24</span> Exercise 9</h1>
+</section>
+<section id="name-two-bad-things-about-this-plot" class="level1" data-number="25">
+<h1 data-number="25"><span class="header-section-number">25</span> Name two “bad” things about this plot</h1>
+<p>ggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density() - The over lapping of the data hides potential trends, and the graph is generally confusing with the labels given.</p>
+</section>
+<section id="what-does-scale_fill_manual-do" class="level1" data-number="26">
+<h1 data-number="26"><span class="header-section-number">26</span> What does scale_fill_manual do?</h1>
+<p>ggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density() + scale_fill_manual(values = c(“blue”, “purple”, “red”)) - The scale fill manual allows you to control the colors you use in the plot.</p>
+</section>
+<section id="what-does-alpha-0.5-do" class="level1" data-number="27">
+<h1 data-number="27"><span class="header-section-number">27</span> What does alpha = 0.5 do?</h1>
+</section>
+<section id="play-around-with-different-values-of-alpha-between-0-and-1" class="level1" data-number="28">
+<h1 data-number="28"><span class="header-section-number">28</span> Play around with different values of alpha, between 0 and 1</h1>
+<p>ggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density(alpha = 0.5) + scale_fill_manual(values = c(“blue”, “purple”, “red”)) - Alpha changes the transparency of the colors on the plot.</p>
+</section>
+<section id="what-does-facet_wrap-do" class="level1" data-number="29">
+<h1 data-number="29"><span class="header-section-number">29</span> What does facet_wrap do?!</h1>
+<p>ggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density() + scale_fill_manual(values = c(“blue”, “purple”, “red”)) + facet_wrap(~ historical) - This creates seperate plots for each variable</p>
+</section>
+<section id="lets-try-a-similar-grouping-strategy-with-a-histogram-instead-of-density-plot." class="level1" data-number="30">
+<h1 data-number="30"><span class="header-section-number">30</span> Let’s try a similar grouping strategy with a histogram instead of density plot.</h1>
+</section>
+<section id="why-is-this-terrible" class="level1" data-number="31">
+<h1 data-number="31"><span class="header-section-number">31</span> Why is this terrible?</h1>
+<p>ggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_histogram(color = “white”) + scale_fill_manual(values = c(“blue”, “purple”, “red”)) - this is terrible becuase it doesn’t show any trends and is very confusing in general.</p>
+<p>#Exercise 10</p>
 
 
 <!-- -->
@@ -862,7 +923,60 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-64"><a href="#cb1-64"></a>  geom_point()</span>
 <span id="cb1-65"><a href="#cb1-65"></a>  geom_smooth(method = "lm") </span>
 <span id="cb1-66"><a href="#cb1-66"></a></span>
-<span id="cb1-67"><a href="#cb1-67"></a><span class="fu"># Excersize 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-67"><a href="#cb1-67"></a><span class="fu"># Exercise 6</span></span>
+<span id="cb1-68"><a href="#cb1-68"></a><span class="ss">- </span>scatter plots aren't good plots when there is both a quantitative and a categorical variable present. This is because the different types of variables don't align, and on the axis with the categorical variable, you will be unable to see the range of the variable. </span>
+<span id="cb1-69"><a href="#cb1-69"></a></span>
+<span id="cb1-70"><a href="#cb1-70"></a>ggplot(elections, aes(y = repub_pct_20, x = historical)) +</span>
+<span id="cb1-71"><a href="#cb1-71"></a>  geom_point()</span>
+<span id="cb1-72"><a href="#cb1-72"></a></span>
+<span id="cb1-73"><a href="#cb1-73"></a><span class="fu"># Exercise 7</span></span>
+<span id="cb1-74"><a href="#cb1-74"></a></span>
+<span id="cb1-75"><a href="#cb1-75"></a><span class="fu"># Side-by-side violin plots</span></span>
+<span id="cb1-76"><a href="#cb1-76"></a>ggplot(elections, aes(y = repub_pct_20, x = historical)) +</span>
+<span id="cb1-77"><a href="#cb1-77"></a>  geom_violin()</span>
+<span id="cb1-78"><a href="#cb1-78"></a>  </span>
+<span id="cb1-79"><a href="#cb1-79"></a><span class="fu"># Side-by-side boxplots (defined below)</span></span>
+<span id="cb1-80"><a href="#cb1-80"></a>ggplot(elections, aes(y = repub_pct_20, x = historical)) +</span>
+<span id="cb1-81"><a href="#cb1-81"></a>  geom_boxplot()</span>
+<span id="cb1-82"><a href="#cb1-82"></a></span>
+<span id="cb1-83"><a href="#cb1-83"></a><span class="fu"># Exercise 8  </span></span>
+<span id="cb1-84"><a href="#cb1-84"></a> ggplot(elections, aes(x = repub_pct_20)) +</span>
+<span id="cb1-85"><a href="#cb1-85"></a>  geom_density() </span>
+<span id="cb1-86"><a href="#cb1-86"></a></span>
+<span id="cb1-87"><a href="#cb1-87"></a><span class="fu"># Exercise 9</span></span>
+<span id="cb1-88"><a href="#cb1-88"></a><span class="fu"># Name two "bad" things about this plot</span></span>
+<span id="cb1-89"><a href="#cb1-89"></a>ggplot(elections, aes(x = repub_pct_20, fill = historical)) +</span>
+<span id="cb1-90"><a href="#cb1-90"></a>  geom_density()</span>
+<span id="cb1-91"><a href="#cb1-91"></a><span class="ss">- </span>The over lapping of the data hides potential trends, and the graph is generally confusing with the labels given. </span>
+<span id="cb1-92"><a href="#cb1-92"></a></span>
+<span id="cb1-93"><a href="#cb1-93"></a><span class="fu"># What does scale_fill_manual do?</span></span>
+<span id="cb1-94"><a href="#cb1-94"></a>ggplot(elections, aes(x = repub_pct_20, fill = historical)) +</span>
+<span id="cb1-95"><a href="#cb1-95"></a>  geom_density() +</span>
+<span id="cb1-96"><a href="#cb1-96"></a>  scale_fill_manual(values = c("blue", "purple", "red"))</span>
+<span id="cb1-97"><a href="#cb1-97"></a><span class="ss">  - </span>The scale fill manual allows you to control the colors you use in the plot. </span>
+<span id="cb1-98"><a href="#cb1-98"></a>  </span>
+<span id="cb1-99"><a href="#cb1-99"></a><span class="fu"># What does alpha = 0.5 do?</span></span>
+<span id="cb1-100"><a href="#cb1-100"></a><span class="fu"># Play around with different values of alpha, between 0 and 1</span></span>
+<span id="cb1-101"><a href="#cb1-101"></a>ggplot(elections, aes(x = repub_pct_20, fill = historical)) +</span>
+<span id="cb1-102"><a href="#cb1-102"></a>  geom_density(alpha = 0.5) +</span>
+<span id="cb1-103"><a href="#cb1-103"></a>  scale_fill_manual(values = c("blue", "purple", "red"))</span>
+<span id="cb1-104"><a href="#cb1-104"></a><span class="ss">- </span>Alpha changes the transparency of the colors on the plot. </span>
+<span id="cb1-105"><a href="#cb1-105"></a></span>
+<span id="cb1-106"><a href="#cb1-106"></a><span class="fu"># What does facet_wrap do?!</span></span>
+<span id="cb1-107"><a href="#cb1-107"></a>ggplot(elections, aes(x = repub_pct_20, fill = historical)) +</span>
+<span id="cb1-108"><a href="#cb1-108"></a>  geom_density() +</span>
+<span id="cb1-109"><a href="#cb1-109"></a>  scale_fill_manual(values = c("blue", "purple", "red")) +</span>
+<span id="cb1-110"><a href="#cb1-110"></a>  facet_wrap(~ historical)</span>
+<span id="cb1-111"><a href="#cb1-111"></a><span class="ss">- </span>This creates seperate plots for each variable</span>
+<span id="cb1-112"><a href="#cb1-112"></a></span>
+<span id="cb1-113"><a href="#cb1-113"></a><span class="fu"># Let's try a similar grouping strategy with a histogram instead of density plot.</span></span>
+<span id="cb1-114"><a href="#cb1-114"></a><span class="fu"># Why is this terrible?</span></span>
+<span id="cb1-115"><a href="#cb1-115"></a>ggplot(elections, aes(x = repub_pct_20, fill = historical)) +</span>
+<span id="cb1-116"><a href="#cb1-116"></a>  geom_histogram(color = "white") +</span>
+<span id="cb1-117"><a href="#cb1-117"></a>  scale_fill_manual(values = c("blue", "purple", "red"))</span>
+<span id="cb1-118"><a href="#cb1-118"></a><span class="ss">- </span>this is terrible becuase it doesn't show any trends and is very confusing in general. </span>
+<span id="cb1-119"><a href="#cb1-119"></a></span>
+<span id="cb1-120"><a href="#cb1-120"></a>#Exercise 10</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
