@@ -64,4 +64,57 @@ ggplot(elections, aes(y = repub_pct_20, x = median_rent)) +
   geom_point()
   geom_smooth(method = "lm") 
 
-# Excersize 6
+# Exercise 6
+- scatter plots aren't good plots when there is both a quantitative and a categorical variable present. This is because the different types of variables don't align, and on the axis with the categorical variable, you will be unable to see the range of the variable. 
+
+ggplot(elections, aes(y = repub_pct_20, x = historical)) +
+  geom_point()
+
+# Exercise 7
+
+# Side-by-side violin plots
+ggplot(elections, aes(y = repub_pct_20, x = historical)) +
+  geom_violin()
+  
+# Side-by-side boxplots (defined below)
+ggplot(elections, aes(y = repub_pct_20, x = historical)) +
+  geom_boxplot()
+
+# Exercise 8  
+ ggplot(elections, aes(x = repub_pct_20)) +
+  geom_density() 
+
+# Exercise 9
+# Name two "bad" things about this plot
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density()
+- The over lapping of the data hides potential trends, and the graph is generally confusing with the labels given. 
+
+# What does scale_fill_manual do?
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density() +
+  scale_fill_manual(values = c("blue", "purple", "red"))
+  - The scale fill manual allows you to control the colors you use in the plot. 
+  
+# What does alpha = 0.5 do?
+# Play around with different values of alpha, between 0 and 1
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density(alpha = 0.5) +
+  scale_fill_manual(values = c("blue", "purple", "red"))
+- Alpha changes the transparency of the colors on the plot. 
+
+# What does facet_wrap do?!
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density() +
+  scale_fill_manual(values = c("blue", "purple", "red")) +
+  facet_wrap(~ historical)
+- This creates seperate plots for each variable
+
+# Let's try a similar grouping strategy with a histogram instead of density plot.
+# Why is this terrible?
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_histogram(color = "white") +
+  scale_fill_manual(values = c("blue", "purple", "red"))
+- this is terrible becuase it doesn't show any trends and is very confusing in general. 
+
+#Exercise 10
