@@ -1,0 +1,18 @@
+
+# Import data
+survey <- read.csv("https://ajohns24.github.io/data/112/about_us_2024.csv")
+
+# How many students have now filled out the survey?
+dim(survey)
+28 students filled out the survey...
+
+# What type of variables do we have?
+head(survey)
+Favorite food, how many minutes away from campus the student lives, favorite temperature, and where the student would most want to hangout. 
+
+# Attach a package needed to use the ggplot function
+library(tidyverse)
+
+# Make a ggplot
+ggplot(survey, aes(x = hangout))
+geom_histogram()
