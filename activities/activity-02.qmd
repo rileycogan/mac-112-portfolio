@@ -3,6 +3,8 @@ title: "Activity 02"
 Author: "riley Cogan"
 Date: "9/13/2024"
 ---
+
+library(tidyverse)
 # Load data
 elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")
 
@@ -38,3 +40,28 @@ ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
 ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
   geom_point() +
   geom_smooth()
+  
+# Removing the individual glyphs
+
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_smooth()
+  
+# Part b
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+  
+# Excersize 5
+
+# Scatterplot of repub_pct_20 vs median_rent
+ggplot(elections, aes(y = repub_pct_20, x = median_rent)) + 
+  geom_point()
+  geom_smooth(method = "lm")
+
+
+# Scatterplot of repub_pct_20 vs median_age
+ ggplot(elections, aes(y = repub_pct_20, x = median_age)) + 
+  geom_point()
+  geom_smooth(method = "lm") 
+
+# Excersize 6
