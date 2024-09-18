@@ -15,11 +15,10 @@ book:
       chapters: 
       - activities/activity-02.qmd
       - activities/activity-03.qmd
-      - activities/05-multivariate.qmd
     
     - part: notes/README.qmd
       chapters: 
-      - notes/note-01.qmd
+      - notes/Journal.qmd
       - notes/note-02.qmd
       
     
