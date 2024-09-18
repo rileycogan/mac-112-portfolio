@@ -74,4 +74,5 @@ ggplot(hikes, aes(x = elevation)) +
 ggplot(hikes, aes(x = elevation)) +
   geom_histogram(color = "white", binwidth = 1000) +
   labs(x = "Elevation (feet)", y = "Number of hikes")
+
   

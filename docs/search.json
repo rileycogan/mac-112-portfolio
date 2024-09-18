@@ -20,6 +20,17 @@
     ]
   },
   {
+    "objectID": "activities/activity-02.html",
+    "href": "activities/activity-02.html",
+    "title": "1  Activity 02",
+    "section": "",
+    "text": "library(tidyverse) # Load data elections &lt;- read.csv(“https://mac-stat.github.io/data/election_2020_county.csv”)\n\n2 Check it out\nhead(elections)\n\n\n3 Set up the plotting frame\n\n\n4 How does this differ than the frame for our histogram of repub_pct_20 alone?\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16))\n\n\n5 Add a layer of points for each county\n\n\n6 Take note of the geom!\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point()\n\n\n7 Change the shape of the points\n\n\n8 What happens if you change the shape to another number?\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point(shape = 8)\n\n\n9 YOU TRY: Modify the code to make the points “orange”\n\n\n10 NOTE: Try to anticipate if “color” or “fill” will be useful here. Then try both.\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16, color = “orange”)) + geom_point()\n\n\n11 Add a layer that represents each county by the state it’s in\n\n\n12 Take note of the geom and the info it needs to run!\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_text(aes(label = state_abbr))\n\n\n13 The biggest differences in republican support between ’16 and ’20 was an increase in support amongst the percentage of people that voted republican, it seems that the dots tend to have shifted upwards in ’20. There seems to be a strong, positive relationship between support in ’16 and ’20. Left leaning states seem to be clustered around the bottom of the line, in areas with the lowest amount of Republican support, whereas the areas that saw the biggest increase where in right leaning states.\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point() + geom_smooth()\n\n\n14 Removing the individual glyphs\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_smooth()\n\n\n15 Part b\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point() + geom_smooth(method = “lm”)\n\n\n16 Excersize 5\n\n\n17 Scatterplot of repub_pct_20 vs median_rent\nggplot(elections, aes(y = repub_pct_20, x = median_rent)) + geom_point() geom_smooth(method = “lm”)\n\n\n18 Scatterplot of repub_pct_20 vs median_age\nggplot(elections, aes(y = repub_pct_20, x = median_age)) + geom_point() geom_smooth(method = “lm”)\n\n\n19 Exercise 6\n\nscatter plots aren’t good plots when there is both a quantitative and a categorical variable present. This is because the different types of variables don’t align, and on the axis with the categorical variable, you will be unable to see the range of the variable.\n\nggplot(elections, aes(y = repub_pct_20, x = historical)) + geom_point()\n\n\n20 Exercise 7\n\n\n21 Side-by-side violin plots\nggplot(elections, aes(y = repub_pct_20, x = historical)) + geom_violin()\n\n\n22 Side-by-side boxplots (defined below)\nggplot(elections, aes(y = repub_pct_20, x = historical)) + geom_boxplot()\n\n\n23 Exercise 8\nggplot(elections, aes(x = repub_pct_20)) + geom_density()\n\n\n24 Exercise 9\n\n\n25 Name two “bad” things about this plot\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density() - The over lapping of the data hides potential trends, and the graph is generally confusing with the labels given.\n\n\n26 What does scale_fill_manual do?\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density() + scale_fill_manual(values = c(“blue”, “purple”, “red”)) - The scale fill manual allows you to control the colors you use in the plot.\n\n\n27 What does alpha = 0.5 do?\n\n\n28 Play around with different values of alpha, between 0 and 1\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density(alpha = 0.5) + scale_fill_manual(values = c(“blue”, “purple”, “red”)) - Alpha changes the transparency of the colors on the plot.\n\n\n29 What does facet_wrap do?!\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density() + scale_fill_manual(values = c(“blue”, “purple”, “red”)) + facet_wrap(~ historical) - This creates seperate plots for each variable\n\n\n30 Let’s try a similar grouping strategy with a histogram instead of density plot.\n\n\n31 Why is this terrible?\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_histogram(color = “white”) + scale_fill_manual(values = c(“blue”, “purple”, “red”)) - this is terrible becuase it doesn’t show any trends and is very confusing in general.\n#Exercise 10",
+    "crumbs": [
+      "Activities",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Activity 02</span>"
+    ]
+  },
+  {
     "objectID": "activities/activity-03.html",
     "href": "activities/activity-03.html",
     "title": "2  Activity 03",
@@ -28,27 +39,6 @@
     "crumbs": [
       "Activities",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 03</span>"
-    ]
-  },
-  {
-    "objectID": "activities/activity-03.html#reflections-the-plus-symbol-allows-us-to-add-altercations-to-the-graph-furthering-the-stylistic-and-technical-capabilities-of-the-plot-the-geom-was-added-becuase-of-the-geogra",
-    "href": "activities/activity-03.html#reflections-the-plus-symbol-allows-us-to-add-altercations-to-the-graph-furthering-the-stylistic-and-technical-capabilities-of-the-plot-the-geom-was-added-becuase-of-the-geogra",
-    "title": "2  Activity 03",
-    "section": "7.1 Reflections, the plus symbol allows us to add altercations to the graph, furthering the stylistic and technical capabilities of the plot… The geom was added becuase of the geogra",
-    "text": "7.1 Reflections, the plus symbol allows us to add altercations to the graph, furthering the stylistic and technical capabilities of the plot… The geom was added becuase of the geogra\nhello",
-    "crumbs": [
-      "Activities",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 03</span>"
-    ]
-  },
-  {
-    "objectID": "notes/README.html",
-    "href": "notes/README.html",
-    "title": "Notes",
-    "section": "",
-    "text": "All notes live here.",
-    "crumbs": [
-      "Notes"
     ]
   },
   {
@@ -63,28 +53,6 @@
     ]
   },
   {
-    "objectID": "activities/activity-02.html",
-    "href": "activities/activity-02.html",
-    "title": "1  Activity 02",
-    "section": "",
-    "text": "library(tidyverse) # Load data elections &lt;- read.csv(“https://mac-stat.github.io/data/election_2020_county.csv”)\n\n2 Check it out\nhead(elections)\n\n\n3 Set up the plotting frame\n\n\n4 How does this differ than the frame for our histogram of repub_pct_20 alone?\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16))\n\n\n5 Add a layer of points for each county\n\n\n6 Take note of the geom!\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point()\n\n\n7 Change the shape of the points\n\n\n8 What happens if you change the shape to another number?\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point(shape = 8)\n\n\n9 YOU TRY: Modify the code to make the points “orange”\n\n\n10 NOTE: Try to anticipate if “color” or “fill” will be useful here. Then try both.\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16, color = “orange”)) + geom_point()\n\n\n11 Add a layer that represents each county by the state it’s in\n\n\n12 Take note of the geom and the info it needs to run!\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_text(aes(label = state_abbr))\n\n\n13 The biggest differences in republican support between ’16 and ’20 was an increase in support amongst the percentage of people that voted republican, it seems that the dots tend to have shifted upwards in ’20. There seems to be a strong, positive relationship between support in ’16 and ’20. Left leaning states seem to be clustered around the bottom of the line, in areas with the lowest amount of Republican support, whereas the areas that saw the biggest increase where in right leaning states.\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point() + geom_smooth()\n\n\n14 Removing the individual glyphs\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_smooth()\n\n\n15 Part b\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point() + geom_smooth(method = “lm”)\n\n\n16 Excersize 5\n\n\n17 Scatterplot of repub_pct_20 vs median_rent\nggplot(elections, aes(y = repub_pct_20, x = median_rent)) + geom_point() geom_smooth(method = “lm”)\n\n\n18 Scatterplot of repub_pct_20 vs median_age\nggplot(elections, aes(y = repub_pct_20, x = median_age)) + geom_point() geom_smooth(method = “lm”)\n\n\n19 Exercise 6\n\nscatter plots aren’t good plots when there is both a quantitative and a categorical variable present. This is because the different types of variables don’t align, and on the axis with the categorical variable, you will be unable to see the range of the variable.\n\nggplot(elections, aes(y = repub_pct_20, x = historical)) + geom_point()\n\n\n20 Exercise 7\n\n\n21 Side-by-side violin plots\nggplot(elections, aes(y = repub_pct_20, x = historical)) + geom_violin()\n\n\n22 Side-by-side boxplots (defined below)\nggplot(elections, aes(y = repub_pct_20, x = historical)) + geom_boxplot()\n\n\n23 Exercise 8\nggplot(elections, aes(x = repub_pct_20)) + geom_density()\n\n\n24 Exercise 9\n\n\n25 Name two “bad” things about this plot\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density() - The over lapping of the data hides potential trends, and the graph is generally confusing with the labels given.\n\n\n26 What does scale_fill_manual do?\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density() + scale_fill_manual(values = c(“blue”, “purple”, “red”)) - The scale fill manual allows you to control the colors you use in the plot.\n\n\n27 What does alpha = 0.5 do?\n\n\n28 Play around with different values of alpha, between 0 and 1\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density(alpha = 0.5) + scale_fill_manual(values = c(“blue”, “purple”, “red”)) - Alpha changes the transparency of the colors on the plot.\n\n\n29 What does facet_wrap do?!\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density() + scale_fill_manual(values = c(“blue”, “purple”, “red”)) + facet_wrap(~ historical) - This creates seperate plots for each variable\n\n\n30 Let’s try a similar grouping strategy with a histogram instead of density plot.\n\n\n31 Why is this terrible?\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_histogram(color = “white”) + scale_fill_manual(values = c(“blue”, “purple”, “red”)) - this is terrible becuase it doesn’t show any trends and is very confusing in general.\n#Exercise 10",
-    "crumbs": [
-      "Activities",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Activity 02</span>"
-    ]
-  },
-  {
-    "objectID": "notes/note-02.html",
-    "href": "notes/note-02.html",
-    "title": "4  Note 02",
-    "section": "",
-    "text": "Journal:\nDate: “9/16” - The next step in the class will be multivariate models, where we add a third variable into our equations.",
-    "crumbs": [
-      "Notes",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Note 02</span>"
-    ]
-  },
-  {
     "objectID": "activities/05-multivariate.html",
     "href": "activities/05-multivariate.html",
     "title": "3  5.1 Review",
@@ -93,6 +61,38 @@
     "crumbs": [
       "Activities",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>5.1 Review</span>"
+    ]
+  },
+  {
+    "objectID": "notes/README.html",
+    "href": "notes/README.html",
+    "title": "Notes",
+    "section": "",
+    "text": "All notes live here.",
+    "crumbs": [
+      "Notes"
+    ]
+  },
+  {
+    "objectID": "notes/Journal.html",
+    "href": "notes/Journal.html",
+    "title": "",
+    "section": "",
+    "text": "Notes4  Journal.html Code\n\n\n\n\nDate: “9/16”\n\nThe next step in the class will be multivariate models, where we add a third variable into our equations.",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Journal.html</span>"
+    ]
+  },
+  {
+    "objectID": "notes/note-02.html",
+    "href": "notes/note-02.html",
+    "title": "5  Note 02",
+    "section": "",
+    "text": "Journal:\nDate: “9/16” - The next step in the class will be multivariate models, where we add a third variable into our equations.\nIn class: Multivariate Viz",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Note 02</span>"
     ]
   }
 ]
