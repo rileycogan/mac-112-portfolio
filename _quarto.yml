@@ -16,7 +16,8 @@ book:
       - activities/activity-02.qmd
       - activities/activity-03.qmd
       - activities/05-multivariate.qmd
-      # - activities/06-spatial.qmd
+      - activities/06-spatial.qmd
+      - activities/07-effective.qmd
      
     
     - part: notes/README.qmd

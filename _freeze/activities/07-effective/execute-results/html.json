@@ -1,0 +1,15 @@
+{
+  "hash": "91144eaf23e782473ee3edab0042d4dc",
+  "result": {
+    "engine": "knitr",
+    "markdown": "::: {.cell}\n\n```{.r .cell-code}\n# Date \"09/23/2024\"\n# Author \"RILEY COGAN\"\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n# \"Plot Critique\"\n\n# Our Group likes number three, because of how straight forward and easy to decipher it is, and we don't like number forty-two because of how hard to decipher it is. \n# The graphs we like all seem to be easy to read and make sense of, combining simplicity and style. \n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

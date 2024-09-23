@@ -1,2 +1,17 @@
 leaflet
 ggplot2
+sf
+maps
+RColorBrewer
+gplots
+socviz
+usethis
+devtools
+rnaturalearthhires
+rnaturalearth
+lattice
+Matrix
+dplyr
+ggformula
+mosaicData
+mosaic

@@ -6,8 +6,17 @@
 
 
 ```{r}
-install.packages(c("sf", "maps", "RColorBrewer", "gplots", "socviz", "leaflet", "devtools"))
-devtools::install_github("ropensci/rnaturalearthhires")
+#install.packages(c("sf", "maps", "RColorBrewer", "gplots", "socviz", "leaflet", "devtools"))
+#devtools::install_github("ropensci/rnaturalearthhires")
+
+library(sf)
+library(maps)
+library(RColorBrewer)
+library(gplots)
+library(socviz)
+library(leaflet)
+library(devtools)
+library(rnaturalearthhires)
 ```
 
 
@@ -70,19 +79,13 @@ leaflet(data = fave_places) %>%
 
 # Import starbucks location data
 starbucks <- read.csv("https://mac-stat.github.io/data/starbucks.csv")
+
 ```
 
-```{r}
-# Don't worry about the syntax
-starbucks_mn <- starbucks %>%   
-  filter(Country == "US", State.Province == "MN")
 
-# Filter work, good reference point
-```
 
 ```{r}
 # Load the package
-install.packages("rnaturalearth")
 library(rnaturalearth)
 
 # Get info about country boundaries across the world
@@ -112,9 +115,6 @@ ggplot(world_boundaries) +
 # Starbucks seems to be concentrated in Western Europe, the United States, and East Asia, but it makes an appearance all around the globe. 
 ```
 
-```{r}
-install.packages(rnaturalearthhires)
-```
 
 
 
