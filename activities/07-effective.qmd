@@ -7,7 +7,46 @@
 # "Plot Critique"
 
 # Our Group likes number three, because of how straight forward and easy to decipher it is, and we don't like number forty-two because of how hard to decipher it is. 
-# The graphs we like all seem to be easy to read and make sense of, combining simplicity and style. 
+# The graphs we like all seem to be easy to read and make sense of, combining simplicity and style. To us, good graphs are easy to understand and make sense of. 
+
+# Is a graph effective?  - appropriate story, clear purpose, appropriate for audience
+
+# Is a Graph Complete? - title, subtitles, labeled axis, legend title/table
+
+# Is a Graph Accessible? - font, color, etc. 
+
+library(tidyverse)
+
+```
+
+```{r}
+# Import the data
+weather <- read.csv("https://mac-stat.github.io/data/weather_3_locations.csv") |> 
+  mutate(date = as.Date(date))
+
+ggplot(weather, aes(y = temp3pm, x = temp9am, color = location)) + 
+  geom_point()
+
+ggplot(weather, aes(x = temp3pm, fill = location)) + 
+  geom_density(alpha = 0.5) + 
+  labs(x = "3pm temperature (Celsius)")  
+
+ggplot(weather, aes(x = temp3pm, fill = location)) + 
+  geom_density(alpha = 0.5) + 
+  labs(x = "3pm temperature (Celsius)")  
+
+ggplot(weather, aes(x = temp3pm, fill = location)) + 
+  geom_density(alpha = 0.5) + 
+  labs(x = "3pm temperature (Celsius)") + 
+  scale_fill_viridis_d()    
+
+# In the color scale line:
+# Change "fill" to "color" since we use color in the aes()
+# Change "d" (discrete) to "c" (continuous) since maxtemp is on a continuous scale
+ggplot(weather, aes(y = temp3pm, x = temp9am, color = maxtemp)) + 
+  geom_point(alpha = 0.5) + 
+  labs(x = "3pm temperature (Celsius)") + 
+  scale_color_viridis_c()
 
 ```
 
