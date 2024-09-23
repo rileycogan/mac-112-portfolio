@@ -1,0 +1,15 @@
+{
+  "hash": "1028572d8b039b0fef74a23b96c9dfb1",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Note 02\"\n---\n\n\n# Journal:\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Date: \"9/16\"\n# - The next step in the class will be multivariate models, where we add a third variable into our equations. \n\n# In class: Multivariate Viz\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n# Date \"9/19\"\n\nlibrary(tidyverse)\n\nfave_places <- read.csv(\"https://ajohns24.github.io/data/112/our_fave_places.csv\")\n\n# Check it out\nhead(fave_places)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n  latitude longitude\n1       46      -123\n2       33        52\n3       48       -90\n4       36      -112\n5       59        25\n6       39      -106\n```\n\n\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n# Date \"9/23/2024\"\n\n# Effective Viz\n\nlibrary(tidyverse)\n\n #ggplot(weather, aes(y = temp3pm, x = temp9am, color = location)) + \n  #geom_point()\n\n# labs creates titles\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -2,10 +2,41 @@
 title: "Note 02"
 ---
 
-Journal:
+# Journal:
 
 
-Date: "9/16"
-- The next step in the class will be multivariate models, where we add a third variable into our equations. 
+```{r}
+# Date: "9/16"
+# - The next step in the class will be multivariate models, where we add a third variable into our equations. 
 
-In class: Multivariate Viz
+# In class: Multivariate Viz
+```
+
+
+```{r}
+# Date "9/19"
+
+library(tidyverse)
+
+fave_places <- read.csv("https://ajohns24.github.io/data/112/our_fave_places.csv")
+
+# Check it out
+head(fave_places)
+```
+
+
+```{r}
+# Date "9/23/2024"
+
+# Effective Viz
+
+library(tidyverse)
+
+ #ggplot(weather, aes(y = temp3pm, x = temp9am, color = location)) + 
+  #geom_point()
+
+# labs creates titles
+```
+
+
+

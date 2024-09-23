@@ -1,0 +1,98 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "COMP/STAT112 Notebook",
+    "section": "",
+    "text": "Introduction\nThis is my online notebook for COMP/STAT112 course taken at Macalester College. Please, use the side bar on the left for navigation.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "activities/README.html",
+    "href": "activities/README.html",
+    "title": "Activities",
+    "section": "",
+    "text": "All activities live here.",
+    "crumbs": [
+      "Activities"
+    ]
+  },
+  {
+    "objectID": "activities/activity-02.html",
+    "href": "activities/activity-02.html",
+    "title": "1  Activity 02",
+    "section": "",
+    "text": "library(tidyverse) # Load data elections &lt;- read.csv(“https://mac-stat.github.io/data/election_2020_county.csv”)\n\n2 Check it out\nhead(elections)\n\n\n3 Set up the plotting frame\n\n\n4 How does this differ than the frame for our histogram of repub_pct_20 alone?\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16))\n\n\n5 Add a layer of points for each county\n\n\n6 Take note of the geom!\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point()\n\n\n7 Change the shape of the points\n\n\n8 What happens if you change the shape to another number?\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point(shape = 8)\n\n\n9 YOU TRY: Modify the code to make the points “orange”\n\n\n10 NOTE: Try to anticipate if “color” or “fill” will be useful here. Then try both.\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16, color = “orange”)) + geom_point()\n\n\n11 Add a layer that represents each county by the state it’s in\n\n\n12 Take note of the geom and the info it needs to run!\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_text(aes(label = state_abbr))\n\n\n13 The biggest differences in republican support between ’16 and ’20 was an increase in support amongst the percentage of people that voted republican, it seems that the dots tend to have shifted upwards in ’20. There seems to be a strong, positive relationship between support in ’16 and ’20. Left leaning states seem to be clustered around the bottom of the line, in areas with the lowest amount of Republican support, whereas the areas that saw the biggest increase where in right leaning states.\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point() + geom_smooth()\n\n\n14 Removing the individual glyphs\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_smooth()\n\n\n15 Part b\nggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_point() + geom_smooth(method = “lm”)\n\n\n16 Excersize 5\n\n\n17 Scatterplot of repub_pct_20 vs median_rent\nggplot(elections, aes(y = repub_pct_20, x = median_rent)) + geom_point() geom_smooth(method = “lm”)\n\n\n18 Scatterplot of repub_pct_20 vs median_age\nggplot(elections, aes(y = repub_pct_20, x = median_age)) + geom_point() geom_smooth(method = “lm”)\n\n\n19 Exercise 6\n\nscatter plots aren’t good plots when there is both a quantitative and a categorical variable present. This is because the different types of variables don’t align, and on the axis with the categorical variable, you will be unable to see the range of the variable.\n\nggplot(elections, aes(y = repub_pct_20, x = historical)) + geom_point()\n\n\n20 Exercise 7\n\n\n21 Side-by-side violin plots\nggplot(elections, aes(y = repub_pct_20, x = historical)) + geom_violin()\n\n\n22 Side-by-side boxplots (defined below)\nggplot(elections, aes(y = repub_pct_20, x = historical)) + geom_boxplot()\n\n\n23 Exercise 8\nggplot(elections, aes(x = repub_pct_20)) + geom_density()\n\n\n24 Exercise 9\n\n\n25 Name two “bad” things about this plot\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density() - The over lapping of the data hides potential trends, and the graph is generally confusing with the labels given.\n\n\n26 What does scale_fill_manual do?\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density() + scale_fill_manual(values = c(“blue”, “purple”, “red”)) - The scale fill manual allows you to control the colors you use in the plot.\n\n\n27 What does alpha = 0.5 do?\n\n\n28 Play around with different values of alpha, between 0 and 1\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density(alpha = 0.5) + scale_fill_manual(values = c(“blue”, “purple”, “red”)) - Alpha changes the transparency of the colors on the plot.\n\n\n29 What does facet_wrap do?!\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_density() + scale_fill_manual(values = c(“blue”, “purple”, “red”)) + facet_wrap(~ historical) - This creates seperate plots for each variable\n\n\n30 Let’s try a similar grouping strategy with a histogram instead of density plot.\n\n\n31 Why is this terrible?\nggplot(elections, aes(x = repub_pct_20, fill = historical)) + geom_histogram(color = “white”) + scale_fill_manual(values = c(“blue”, “purple”, “red”)) - this is terrible becuase it doesn’t show any trends and is very confusing in general.\n#Exercise 10",
+    "crumbs": [
+      "Activities",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Activity 02</span>"
+    ]
+  },
+  {
+    "objectID": "activities/activity-03.html",
+    "href": "activities/activity-03.html",
+    "title": "2  Activity 03",
+    "section": "",
+    "text": "3 COMMENT on the change in the code and the corresponding change in the plot\nggplot(hikes, aes(x = rating)) + geom_bar()",
+    "crumbs": [
+      "Activities",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 03</span>"
+    ]
+  },
+  {
+    "objectID": "activities/activity-03.html#reflections-the-plus-symbol-allows-us-to-add-altercations-to-the-graph-furthering-the-stylistic-and-technical-capabilities-of-the-plot",
+    "href": "activities/activity-03.html#reflections-the-plus-symbol-allows-us-to-add-altercations-to-the-graph-furthering-the-stylistic-and-technical-capabilities-of-the-plot",
+    "title": "2  Activity 03",
+    "section": "7.1 Reflections, the plus symbol allows us to add altercations to the graph, furthering the stylistic and technical capabilities of the plot…",
+    "text": "7.1 Reflections, the plus symbol allows us to add altercations to the graph, furthering the stylistic and technical capabilities of the plot…",
+    "crumbs": [
+      "Activities",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activity 03</span>"
+    ]
+  },
+  {
+    "objectID": "activities/05-multivariate.html",
+    "href": "activities/05-multivariate.html",
+    "title": "3  5.1 Review",
+    "section": "",
+    "text": "#Date: \"09/16/2024\"\n#Author: \"RILEY COGAN\"\n\n\n\nlibrary(tidyverse)\n\n# Import data\nweather &lt;- read.csv(\"https://mac-stat.github.io/data/weather_3_locations.csv\") |&gt; \n  mutate(date = as.Date(date))  \n\n# Check out the first 6 rows\n# What are the units of observation?\nhead(weather)\n\n        date   location mintemp maxtemp rainfall evaporation sunshine\n1 2020-01-01 Wollongong    17.1    23.1        0          NA       NA\n2 2020-01-02 Wollongong    17.7    24.2        0          NA       NA\n3 2020-01-03 Wollongong    19.7    26.8        0          NA       NA\n4 2020-01-04 Wollongong    20.4    35.5        0          NA       NA\n5 2020-01-05 Wollongong    19.8    21.4        0          NA       NA\n6 2020-01-06 Wollongong    18.3    22.9        0          NA       NA\n  windgustdir windgustspeed winddir9am winddir3pm windspeed9am windspeed3pm\n1         SSW            39        SSW        SSE           20           15\n2         SSW            37          S        ENE           13           15\n3          NE            41        NNW        NNE            7           17\n4         SSW            78         NE        NNE           15           17\n5         SSW            57        SSW          S           31           35\n6          NE            35        ESE         NE           17           20\n  humidity9am humidity3pm pressure9am pressure3pm cloud9am cloud3pm temp9am\n1          69          64      1014.9      1014.0        8        1    19.1\n2          72          54      1020.1      1017.7        7        1    19.8\n3          72          71      1017.5      1013.0        6       NA    23.4\n4          77          69      1008.8      1003.9       NA       NA    24.5\n5          70          75      1018.9      1019.9       NA        7    20.7\n6          71          71      1021.2      1018.2       NA       NA    20.9\n  temp3pm raintoday risk_mm raintomorrow\n1    22.9        No     0.0           No\n2    23.6        No     0.0           No\n3    25.7        No     0.0           No\n4    26.7        No     0.0           No\n5    20.0        No     0.0           No\n6    22.6        No     0.8           No\n\n# The unit of observation is Australian days.\n\n# How many data points do we have? \ndim(weather)\n\n[1] 2367   24\n\n# We have a total of 2367 data points\n\n# What type of variables do we have?\n# We have both categorical and quantitative variables. \n\n# Example 1\n\nggplot(weather, aes(x = date, y = temp3pm)) + \ngeom_point()\n\nWarning: Removed 19 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n# Example 2\n\n# Plot 1 (no facets & starting from a density plot of temp3pm)\nggplot(weather, aes(x = temp3pm)) + \n  geom_density()\n\nWarning: Removed 19 rows containing non-finite outside the scale range\n(`stat_density()`).\n\n\n\n\n\n\n\n\n# Plot 2 (no facets or densities)\nggplot(weather, aes(x = temp3pm)) + \n  geom_boxplot()\n\nWarning: Removed 19 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n# Plot 3 (facets)\nggplot(weather, aes(x = temp3pm)) + \n  geom_density() + \n  facet_wrap(~location)\n\nWarning: Removed 19 rows containing non-finite outside the scale range\n(`stat_density()`).\n\n\n\n\n\n\n\n\n\n\n#\n\n\n# Exercise 5.3\n\n# Import and check out data\neducation &lt;- read.csv(\"https://mac-stat.github.io/data/sat.csv\")\nhead(education)\n\n       State expend ratio salary frac verbal math  sat  fracCat\n1    Alabama  4.405  17.2 31.144    8    491  538 1029   (0,15]\n2     Alaska  8.963  17.6 47.951   47    445  489  934 (45,100]\n3    Arizona  4.778  19.3 32.175   27    448  496  944  (15,45]\n4   Arkansas  4.459  17.1 28.934    6    482  523 1005   (0,15]\n5 California  4.992  24.0 41.078   45    417  485  902  (15,45]\n6   Colorado  5.443  18.4 34.571   29    462  518  980  (15,45]\n\n#Exercise 1\n#- Part A\n\nggplot(education, aes(y = sat)) + \n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.",
+    "crumbs": [
+      "Activities",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>5.1 Review</span>"
+    ]
+  },
+  {
+    "objectID": "notes/README.html",
+    "href": "notes/README.html",
+    "title": "Notes",
+    "section": "",
+    "text": "All notes live here.",
+    "crumbs": [
+      "Notes"
+    ]
+  },
+  {
+    "objectID": "notes/Journal.html",
+    "href": "notes/Journal.html",
+    "title": "",
+    "section": "",
+    "text": "Notes4  Journal.html Code\n\n\n\n\nDate: “9/16”\n\nThe next step in the class will be multivariate models, where we add a third variable into our equations.",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Journal.html</span>"
+    ]
+  },
+  {
+    "objectID": "notes/note-02.html",
+    "href": "notes/note-02.html",
+    "title": "5  Note 02",
+    "section": "",
+    "text": "6 Journal:\n\n# Date: \"9/16\"\n# - The next step in the class will be multivariate models, where we add a third variable into our equations. \n\n# In class: Multivariate Viz\n\n\n# Date \"9/19\"\n\nlibrary(tidyverse)\n\nfave_places &lt;- read.csv(\"https://ajohns24.github.io/data/112/our_fave_places.csv\")\n\n# Check it out\nhead(fave_places)\n\n  latitude longitude\n1       46      -123\n2       33        52\n3       48       -90\n4       36      -112\n5       59        25\n6       39      -106\n\n\n\n# Date \"9/23/2024\"\n\n# Effective Viz\n\nlibrary(tidyverse)\n\n #ggplot(weather, aes(y = temp3pm, x = temp9am, color = location)) + \n  #geom_point()\n\n# labs creates titles",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Note 02</span>"
+    ]
+  }
+]
