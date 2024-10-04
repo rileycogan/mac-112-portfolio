@@ -1,0 +1,85 @@
+```{r}
+# DATE: "10/02/2024"
+# AUTHOR: "RILEY COGAN"
+```
+
+```{r}
+
+
+library(tidyverse)
+elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")
+
+# Define elections_small
+#___ <- ___ |>
+#  ___(___)
+
+# Check out the first 6 rows to confirm your code did what you think it did!
+
+elections_small <- elections %>% 
+  select(state_name, county_name, total_votes_20, repub_pct_20, dem_pct_20, total_votes_16, dem_pct_16) 
+
+head(elections_small)
+
+```
+```{r}
+# Keep only data on counties in Hawaii
+# elections_small |>
+#  filter(___ ___ ___)
+
+elections_small %>% 
+  filter(state_name == "Hawaii")
+```
+
+```{r}
+# What does this do?
+# elections_small |> 
+#   filter(state_name %in% c("Hawaii", "Delaware"))
+
+elections_small %>% 
+  filter(state_name %in% c("Hawaii", "Delaware"))
+```
+```{r}
+elections_small %>% 
+  filter(repub_pct_20 > "93.37")
+
+elections_small %>% 
+  filter(repub_pct_20 >= "93.37")
+```
+```{r}
+# Keep only data on counties in Texas where the Democrat got more than 65% of the vote in 2020
+# Do this 2 ways.
+# Method 1: 2 filters with 1 condition each
+#elections_small |> 
+#  filter(___) |> 
+#  filter(___)
+
+# Method 2: 1 filter with 2 conditions
+#elections_small |> 
+#  filter(___, ___)
+
+elections_small %>% 
+  filter(state_name == "Texas", dem_pct_20 > "65") 
+
+```
+```{r}
+# Arrange the counties in elections_small from lowest to highest percentage of 2020 Republican support
+# Print out just the first 6 rows
+# elections_small |> 
+#   arrange(___) |> 
+#   head()
+
+elections_small %>% 
+  arrange(repub_pct_20)
+```
+
+```{r}
+# What did this code do?
+# elections_small |> 
+#   mutate(diff_20 = repub_pct_20 - dem_pct_20) |> 
+#   head()
+
+elections_small %>% 
+  mutate(diff_20 = repub_pct_20 - dem_pct_20) %>% 
+  head()
+```
+

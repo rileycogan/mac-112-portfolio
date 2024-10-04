@@ -18,6 +18,7 @@ book:
       - activities/05-multivariate.qmd
       - activities/06-spatial.qmd
       - activities/07-effective.qmd
+      - activities/08-wrangling.qmd
      
     
     - part: notes/README.qmd

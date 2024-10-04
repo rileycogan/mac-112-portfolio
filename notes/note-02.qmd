@@ -38,5 +38,62 @@ library(tidyverse)
 # labs creates titles
 ```
 
+```{r}
+# Date: "09/27/2024
+
+# Why do we need visualizations? It allows for a quick, easy way to acquaint oneself with a dataset. 
+# Assume you are given a clean dataset, what are the first steps? Using the head() function, you should check and see what the variables are, you should also use the dim() function to see how many points you are using, you should also learn what the units of observation are. Use the str() function. 
+# The max number of categorical variables you can visualize in one plot is three, maybe four. The maximum number of numerical variables you could fit into one graph is seven. 
+# We can make a plot more effective by adding labels, legends, titles, subtitles, captions, alt_text, color, correct plots.
+# The x axis is made up of latitude and the y axis is made up of longitude. 
+```
+
+```{r}
+# DATE "10/02/24"
+# Load tidyverse & data
+library(tidyverse)
+elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")
+```
+
+```{r}
+elections |>
+  group_by(historical) |>
+  summarise(n()) 
+```
+
+```{r}
+# Get a background map
+library(socviz)
+data(county_map)
+
+# Make a choropleth map
+library(RColorBrewer)  # For the color scale
+library(ggthemes) # For theme_map
+elections |> 
+  mutate(county_fips = as.character(county_fips)) |> 
+  mutate(county_fips = 
+           ifelse(nchar(county_fips) == 4, paste0("0", county_fips), county_fips)) |> 
+  ggplot(aes(map_id = county_fips, fill = cut(repub_pct_20, breaks = seq(0, 100, by = 10)))) +
+    geom_map(map = county_map) +
+    scale_fill_manual(values = rev(brewer.pal(10, "RdBu")), name = "% Republican") +
+    expand_limits(x = county_map$long, y = county_map$lat)  + 
+    theme_map() +
+    theme(legend.position = "right") + 
+    coord_equal()
+```
+
+
+```{r}
+#How many total people voted for the Democratic and Republican candidates in 2020?
+#What about in each state?
+#In just the state of Minnesota:
+#Which counties had the highest and lowest Democratic vote in 2020?
+#How did the Democratic vote in each county change from 2016 to 2020?
+  
+```
+
+```{r}
+# is.na() shows the coloumns with missing values, helping you to better acquiant yourself with your data set. rowSums() determines how many rows have missing values, coloumnSum() determines how many have no data entered. 
+```
 
 
