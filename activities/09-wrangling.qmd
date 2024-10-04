@@ -1,0 +1,109 @@
+```{r}
+# DATE: "10/04/2024"
+# AUTHOR: "RILEY COGAN"
+```
+```{r}
+library(tidyverse)
+penguins <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv')
+
+# Check it out
+head(penguins)
+```
+
+```{r}
+# Create a dataset with just Adelie and Chinstrap using %in%
+# Pipe this into `count(species)` to confirm that you only have these 2 species
+# ___ |> 
+#   filter(___) |> 
+#   count(species)
+
+# Create a dataset with just Adelie and Chinstrap using %in%
+# Pipe this into `count(species)` to confirm that you only have these 2 species
+penguins |>
+  filter(species %in% c("Adelie", "Chinstrap")) |>
+  count(species)
+```
+```{r}
+# Create a dataset with just Adelie and Chinstrap using !=
+# Pipe this into `count(species)` to confirm that you only have these 2 species
+penguins |>
+  filter(species != "Gentoo") |>
+  count(species)
+```
+```{r}
+# First: recall the variable names
+names(penguins)
+
+# Use a shortcut to keep everything but the year and island variables
+penguins |> 
+  select(-year, -island)
+```
+```{r}
+# Use a shortcut to keep only species and the penguin characteristics measured in mm
+penguins |> 
+  select(species, ends_with("mm"))
+```
+```{r}
+# Use a shortcut to keep only species and bill-related measurements
+penguins |> 
+  select(species, starts_with("bill"))
+# Use a shortcut to keep only species and the length-related characteristics
+penguins |> 
+  select(species, contains("length"))
+```
+```{r}
+# Change this code to sort the penguins by species, and then island name
+# NOTE: The first row should be an Adelie penguin living on Biscoe island
+penguins |> 
+  arrange(species, island) |> 
+  head()
+```
+```{r}
+# Change this code to count the number of male/female penguins observed for each species
+penguins |> 
+  count(species, sex)
+```
+```{r}
+# Change this code to calculate the average body mass by species and sex
+penguins |> 
+  group_by(species, sex) |> 
+  summarize(mean = mean(body_mass_g, na.rm = TRUE))
+```
+```{r}
+# Get today's date
+as.Date(today())
+# Let's store this as "today" so we can work with it below
+today <- as.Date(today())
+
+# Check out the class of this object
+class(today)
+
+# Records just the 4-digit year
+year(today)
+
+# Today's month, as a number or label
+month(today)
+
+month(today, label = TRUE)
+
+# This is the week of the year (1-52)
+week(today)
+
+# Day of the month (1-31) and day of the year (1-366)
+mday(today)
+
+yday(today)  # This is often called the "Julian day"
+
+# Day of the week as a number or label
+wday(today)
+
+wday(today, label = TRUE)
+
+# today is on or after Feb 14, 2024
+today >= ymd("2024-02-14")
+
+# today is not before Feb 14, 2024
+today < ymd("2024-02-14")
+```
+
+
