@@ -19,6 +19,7 @@ book:
       - activities/06-spatial.qmd
       - activities/07-effective.qmd
       - activities/08-wrangling.qmd
+      - activities/09-wrangling.qmd
      
     
     - part: notes/README.qmd

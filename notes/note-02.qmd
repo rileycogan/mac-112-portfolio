@@ -96,4 +96,30 @@ elections |>
 # is.na() shows the coloumns with missing values, helping you to better acquiant yourself with your data set. rowSums() determines how many rows have missing values, coloumnSum() determines how many have no data entered. 
 ```
 
+```{r}
+# DATE: "10/07/2024"
+
+library(tidyverse)
+penguins <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv')
+
+# Using count()
+
+# Using count()
+penguins |> 
+  count(species, sex)
+# Using group_by() and summarize()
+penguins |>  
+  group_by(species) |> 
+  count(sex)
+
+penguin_avg <- penguins |> 
+  group_by(species, sex) |> 
+  summarize(avg_body_mass = mean(body_mass_g, na.rm = TRUE)) |> 
+  na.omit()
+
+head(penguins)
+head(penguin_avg)
+
+# The reshaping process does not lose any data from the original dataset...
+```
 
