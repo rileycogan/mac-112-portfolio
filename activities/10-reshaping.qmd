@@ -8,6 +8,45 @@ library(tidyverse)
 penguins <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv')
 ```
 ```{r}
+sleep_wide <- read.csv("https://mac-stat.github.io/data/sleep_wide.csv")
 
+head(sleep_wide)
+
+# For cols, try 2 appproaches: using - and starts_with
+sleep_wide |>
+  pivot_longer(cols = -Subject, names_to = "day", values_to = "reaction_time")
+
+# For cols, try 2 appproaches: using - and starts_with
+sleep_wide |>
+  pivot_longer(cols = -Subject, names_to = "day", values_to = "reaction_time")
+
+sleep_wide |>
+  pivot_longer(cols = starts_with("day"), names_to = "day", values_to = "reaction_time")
+
+sleep_long <- sleep_wide |>
+  pivot_longer(cols = -Subject,
+               names_to = "day",
+               names_prefix = "day_",
+               values_to = "reaction_time") 
+
+ggplot(sleep_long, aes(y = reaction_time, x = day, color = Subject)) + 
+  geom_line()
+
+
+```
+```{r}
+sleep_long <- sleep_wide |>
+  pivot_longer(cols = -Subject,
+               names_to = "day",
+               names_prefix = "day_",
+               values_to = "reaction_time") |> 
+  mutate(Subject = as.factor(Subject), day = as.numeric(day))
+```
+
+```{r}
+# Make a line plot of reaction time by day for each subject
+# Put these all on the same frame
+ggplot(sleep_long, aes(y = reaction_time, x = day, color = Subject)) + 
+  geom_line()
 ```
 
