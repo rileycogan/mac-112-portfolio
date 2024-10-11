@@ -122,4 +122,8 @@ head(penguin_avg)
 
 # The reshaping process does not lose any data from the original dataset...
 ```
+```{r}
+# DATE "10/11/2024"
+# Semi-join, uses the columns you select, if two have same name, you will get error message. left_join takes the comments from the right table and adds them to the left. inner_join only takes rows with overlap, full join will join everything, semi_join is like a filter, but filters in the rows with the same keys, anti_join is a version of the select, taking only the portions of the left table that won't merge with the right table. Anti join removes what the two tables both share.  
+```
 

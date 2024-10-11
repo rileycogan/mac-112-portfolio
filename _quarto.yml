@@ -20,6 +20,8 @@ book:
       - activities/07-effective.qmd
       - activities/08-wrangling.qmd
       - activities/09-wrangling.qmd
+      - activities/10-reshaping.qmd
+      - activities/11-joining.qmd
      
     
     - part: notes/README.qmd

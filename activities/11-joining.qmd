@@ -1,0 +1,202 @@
+```{r}
+# Date "10/11/2024"
+# Activity 11
+# Author "Riley Cogan"
+```
+
+```{r}
+students_1 <- data.frame(
+  student = c("A", "B", "C"),
+  class = c("STAT 101", "GEOL 101", "ANTH 101")
+)
+
+# Check it out
+students_1
+```
+```{r}
+enrollments_1 <- data.frame(
+  class = c("STAT 101", "ART 101", "GEOL 101"),
+  enrollment = c(18, 17, 24)
+)
+
+# Check it out
+enrollments_1
+```
+```{r}
+# Left_join practice
+
+library(tidyverse)
+students_1 |> 
+  left_join(enrollments_1)
+
+# This merged the two datasets, highlighting different students, what classes they are in, and the total enrollment for that respective class. 
+```
+```{r}
+#Inner Join practice
+
+students_1 |> 
+  inner_join(enrollments_1)
+```
+```{r}
+enrollments_1 |> 
+  inner_join(students_1)
+
+# Inner Join combines the two data sets by combing the two classes that have overlap between the two data sets. When the function is inversed, the output differs by order, with the second format making the most sense having class first. 
+```
+```{r}
+students_1 |> 
+  full_join(enrollments_1)
+
+enrollments_1 |> 
+  full_join(students_1)
+
+# This combines all elements of two datasets, highlighting the differences between the two data sets. When run on the inverse, the selected row is the class, rather than by student. 
+```
+```{r}
+# KEY: left_join()
+# Keeps all observations from the left, but discards any observations in the right that do not have a match in the left.1
+
+# inner_join()
+# Keeps only the observations from the left with a match in the right.
+
+# full_join()
+# Keeps all observations from the left and the right. (This is less common than left_join() and inner_join()).
+```
+```{r}
+students_1 |> 
+  semi_join(enrollments_1)
+enrollments_1 |> 
+  semi_join(students_1)
+
+# Semi Join selects only the parts of the data set that are transferable, meaning that onlt the parts that match stay, while the parts that don't match are left alone. 
+```
+```{r}
+students_1 |> 
+  anti_join(enrollments_1)
+enrollments_1 |> 
+  anti_join(students_1)
+# this takes only parts that don't match?
+```
+```{r}
+# KEY: semi_join()
+# Discards any observations in the left table that do not have a match in the right table. If there are multiple matches of right cases to a left case, it keeps just one copy of the left case.
+
+# anti_join()
+# Discards any observations in the left table that do have a match in the right table.
+```
+```{r}
+students_2 <- data.frame(
+  student = c("D", "E", "F"),
+  class = c("COMP 101", "BIOL 101", "POLI 101")
+)
+
+# Check it out
+students_2
+```
+```{r}
+enrollments_2 <- data.frame(
+  course = c("ART 101", "BIOL 101", "COMP 101"),
+  enrollment = c(18, 20, 19)
+)
+
+# Check it out
+enrollments_2
+```
+```{r}
+# POTENTIAL ERRORS AND POSSIBLE SOLUTIONS, VERY IMPORTANT!!!!
+
+
+# eval = FALSE: don't evaluate this chunk when knitting. it produces an error.
+# students_2 |> 
+  # left_join(enrollments_2)
+
+# This is because the names of the columns do NOT match (class vs course), thus we have to run the following code:
+students_2 |> 
+  left_join(enrollments_2, by = c("class" = "course"))
+
+# The order of the keys is important:
+# by = c("left data key" = "right data key")
+# The order is mixed up here, thus we get an error:
+# students_2 |> 
+  # left_join(enrollments_2, by = c("course" = "class"))
+```
+```{r}
+# Add student grades in each course
+students_3 <- data.frame(
+  student = c("Y", "Y", "Z", "Z"),
+  class = c("COMP 101", "BIOL 101", "POLI 101", "COMP 101"),
+  grade = c("B", "S", "C", "A")
+)
+
+# Check it out
+students_3
+```
+```{r}
+# Add average grades in each course
+enrollments_3 <- data.frame(
+  class = c("ART 101", "BIOL 101","COMP 101"),
+  grade = c("B", "A", "A-"),
+  enrollment = c(20, 18, 19)
+)
+
+# Check it out
+enrollments_3
+```
+```{r}
+students_3 |> 
+  left_join(enrollments_3)
+
+# This is problematic because it is trying to match an individual's grade to a class average grade... 
+# The solution is as follows:
+
+students_3 |> 
+  left_join(enrollments_3, by = c("class" = "class"))
+
+# grade.x is the individual's grade, whereas grade.y is the class average. 
+```
+```{r}
+# Beginning of Exercise 2
+
+# People who have voted
+voters <- data.frame(
+  id = c("A", "D", "E", "F", "G"),
+  times_voted = c(2, 4, 17, 6, 20)
+)
+
+voters
+```
+```{r}
+# Contact info for voting age adults
+contact <- data.frame(
+  name = c("A", "B", "C", "D"),
+  address = c("summit", "grand", "snelling", "fairview"),
+  age = c(24, 89, 43, 38)
+)
+
+contact
+```
+```{r}
+# 1. We want contact info for people who HAVEN'T voted
+contact |> 
+  left_join(voters, by = c("name" = "id")) ## My attempt
+contact |> 
+  anti_join(voters, by = c("name" = "id")) ## Answer key
+
+# 2. We want contact info for people who HAVE voted
+voters |> 
+  left_join(contact, by = c("id" = "name")) ## My attempt
+contact |> 
+  semi_join(voters, by = c("name" = "id")) ## Answer key
+
+# 3. We want any data available on each person
+voters |> 
+  full_join(contact, by = c("id" = "name")) ## My attempt
+contact |> 
+  full_join(voters, by = c("name" = "id")) ## Answer Key
+voters |> 
+  full_join(contact, by = c("id" = "name")) ## Answer key part 2?
+# 4. When possible, we want to add contact info to the voting roster
+voters |> 
+  left_join(contact, by = c("id" = "name")) ## Answer key
+```
+
