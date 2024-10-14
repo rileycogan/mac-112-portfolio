@@ -1,3 +1,0 @@
-Date: "9/16"
-
-- The next step in the class will be multivariate models, where we add a third variable into our equations. 

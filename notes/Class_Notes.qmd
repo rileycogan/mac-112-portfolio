@@ -1,5 +1,5 @@
 ---
-title: "Note 02"
+title: "Journal"
 ---
 
 # Journal:
@@ -125,5 +125,40 @@ head(penguin_avg)
 ```{r}
 # DATE "10/11/2024"
 # Semi-join, uses the columns you select, if two have same name, you will get error message. left_join takes the comments from the right table and adds them to the left. inner_join only takes rows with overlap, full join will join everything, semi_join is like a filter, but filters in the rows with the same keys, anti_join is a version of the select, taking only the portions of the left table that won't merge with the right table. Anti join removes what the two tables both share.  
+```
+
+```{r}
+# DATE "10/13/2024"
+
+library(tidyverse)
+elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv") |> 
+  select(state_abbr, historical, county_name, total_votes_20, repub_pct_20, dem_pct_20) |> 
+  mutate(dem_support_20 = case_when(
+    (repub_pct_20 - dem_pct_20 >= 5) ~ "low",
+    (repub_pct_20 - dem_pct_20 <= -5) ~ "high",
+    .default = "medium"
+  ))
+
+# Check it out
+head(elections)  
+
+ggplot(elections, aes(x = dem_support_20)) + 
+  geom_bar()
+
+elections |> 
+  count(dem_support_20)
+
+str(elections)
+
+# Notice that the order of the levels is not alphabetical!
+elections <- elections |> 
+  mutate(dem_support_20 = fct_relevel(dem_support_20, c("low", "medium", "high")))
+
+# Notice the new structure of the dem_support_20 variable
+str(elections)
+
+# And plot dem_support_20
+ggplot(elections, aes(x = dem_support_20)) +
+  geom_bar()
 ```
 
