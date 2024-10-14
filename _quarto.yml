@@ -22,6 +22,7 @@ book:
       - activities/09-wrangling.qmd
       - activities/10-reshaping.qmd
       - activities/11-joining.qmd
+      - activities/12-factors.qmd
      
     
     - part: notes/README.qmd
