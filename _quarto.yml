@@ -23,6 +23,7 @@ book:
       - activities/10-reshaping.qmd
       - activities/11-joining.qmd
       - activities/12-factors.qmd
+      - activities/13-strings.qmd
      
     
     - part: notes/README.qmd
