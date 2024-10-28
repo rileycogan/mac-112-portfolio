@@ -1,0 +1,66 @@
+(e).highlightText}"
+        highlight-text-prefix="${e=>be(e).prefix}"
+        highlight-text-suffix="${e=>be(e).suffix}"
+        highlight-text-style="font-size: 48px; letter-spacing: 0.05em; margin-inline-start: 9px; margin-inline-end: 14px;"
+		component-name="${null==e?void 0:e.name}"
+        :layoutConfig=${t=>null==e?void 0:e.layout}
+    />
+`)),qe.registerCreator("div-wrapper",((e,t)=>f.dy`
+    <msn-native-ad-div-wrapper
+        marginLeft=${e&&e.marginLeft}
+        marginRight=${e&&e.marginRight}
+        marginTop=${e&&e.marginTop}
+        marginBottom=${e&&e.marginBottom}
+        width=${e&&e.width}
+        marginInline=${e&&e.marginInline}
+        ${e&&e.setClickBeacon?(0,x.lq)(!0,!1):""}
+		component-name="${null==e?void 0:e.name}"
+    >
+        ${t}
+    </msn-native-ad-div-wrapper>
+`)),qe.registerCreator("free-shipping",(e=>f.dy`
+    <decoration-free-shipping-button
+        font-family=${t=>((e,t)=>t?t.includes(" ")?`"${t}"`:t:e.fontFamilyOnCardContent||"inherit")(t,null==e?void 0:e.fontFamily)}
+        color=${e.color}
+        icon=${e.icon}
+        data=${e=>(0,he.Z)(e.localizedStrings,"nativeAdFreeShippingText")}
+		component-name="${null==e?void 0:e.name}"
+        :layoutConfig=${t=>null==e?void 0:e.layout}
+    >
+    </decoration-free-shipping-button>
+`)),qe.registerCreator("rating",(e=>f.dy`
+    <decoration-rating
+        color=${e.color}
+        elementStyle=${()=>e.elementStyle}
+        elementSize=${e.elementSize}
+        rating=${e=>e.assets&&e.assets.rating}
+        review-data=${e=>e.assets.review}
+        is-show-review=${e.displayReviewCount}
+        font-family=${t=>((e,t)=>t?t.includes(" ")?`"${t}"`:t:e.fontFamilyOnCardContent||"inherit")(t,null==e?void 0:e.fontFamily)}
+		component-name="${null==e?void 0:e.name}"
+        :layoutConfig=${t=>null==e?void 0:e.layout}
+    >
+    </decoration-rating>
+`)),qe.registerCreator("special-offer",(e=>f.dy`
+    <msn-native-ad-special-offer
+        :localizedStrings=${e=>e.localizedStrings}
+        displayed-text="${e=>e.assets.specialOffer.displayedText}"
+        promotional-text="${e=>e.assets.specialOffer.promotionalText}"
+        redemption-code="${e=>e.assets.specialOffer.redemptionCode}"
+        days-from-expiration="${e=>e.assets.specialOffer.daysFromExpiration}"
+        destination-url="${e=>e.assets.specialOffer.destinationURL}"
+        margin-left="-6"
+        is-dr-config=${e&&e.isDrConfig}
+        ${(0,x.lq)(!0,!1)}
+		component-name="${null==e?void 0:e.name}"
+        :layoutConfig=${t=>null==e?void 0:e.layout}
+    >
+    </msn-native-ad-special-offer>
+`)),qe.registerCreator("ad-full-card-gradient",((e,t)=>f.dy`
+    <msn-native-ad-full-card-gradient 
+        pattern-mode="${null==e?void 0:e.patternMode}"
+        :layoutConfig=${t=>null==e?void 0:e.layout}
+    >
+        ${(0,C.g)((()=>t),t)}
+    </msn-native-ad-full-card-gradient>
+`));var Je=i(77005),Qe=i(55889),Xe=i(75592);const Ke=n.DI.getOrCreateDOMContainer(),Ye=window.matchMedia("(prefers-color-scheme: dark)");let et,tt;function it(){Ke.register(n.YM.instance(o,{...this.strings,...et})),this.adBackgroundColor=null!=Ye&&Ye.matches?"#2E2E2E":"#FFFFFF",null==Ye||Ye.addEventListener("change",this.themeM

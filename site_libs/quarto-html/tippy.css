@@ -1,0 +1,27 @@
+e?void 0:e.name}"
+        id="${e=>e.id}-ad-choice"
+    >
+    </msn-native-ad-ad-choice>
+`)),qe.registerCreator("see-more",(e=>f.dy`
+    <msn-native-ad-see-more
+        :layoutConfig=${t=>null==e?void 0:e.layout}
+        :data=${t=>({...t,isFeedV2:e&&e.isFeedV2,isHovered:t.hoverState&&t.hoverState.isHovered})}
+        data-t="${e=>{var t;return null==e||null===(t=e.adTelemetryContext)||void 0===t||null===(t=t.seeMore)||void 0===t?void 0:t.getMetadataTag()}}"
+		component-name="${null==e?void 0:e.name}"
+    >
+    </msn-native-ad-see-more>
+`)),qe.registerCreator("like-button",(e=>f.dy`
+    <msn-native-ad-like-button
+        :layoutConfig=${t=>null==e?void 0:e.layout}
+        native-ad-like-text=${e=>e.strings&&e.strings.nativeAdLikeText}
+        native-ad-unlike-text=${e=>e.strings&&e.strings.nativeAdUnLikeText}
+        beaconsJson=${e=>e.beaconsJson}
+		component-name="${null==e?void 0:e.name}"
+    >
+    </msn-native-ad-like-button>
+`)),qe.registerCreator("call-to-action",(e=>f.dy`
+    <msn-native-ad-call-to-action 
+        text="${e=>(e=>e.template&&e.strings?"prg-ad-cta"===e.template.configType?e.strings.nativeAdBuyNowText:e.strings.nativeAdLearnMoreText:"")(e)}"
+        default-background-color="${e&&e.backgroundColor}"
+        background-color="${e=>(e=>e.template&&e.layoutColor?"prg-ad-cta"===e.template.configType||"prg-ad-cta-lm"===e.template.configType?"":e.layoutColor:"")(e)}"
+    

@@ -102,6 +102,17 @@ courses_clean |>
   filter(str_detect(instructor, "Alicia Johnson")) 
 ```
 ```{r}
+courses_clean |> 
+  filter(str_detect(instructor, "Maria Fedorova"))
+Masha_classes <- courses_clean |> 
+  filter(dept == "HIST") |> 
+  filter(instructor == "Maria Fedorova")
+  
+  
+Masha_classes
+```
+
+```{r}
 stat <- courses_clean |> 
   filter(dept == "STAT") |> 
   mutate(name = str_replace(name, "Introduction to ", "")) |>
